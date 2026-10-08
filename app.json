@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "ErgoFocus",
+    "slug": "ergofocus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.ergofocus.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "ErgoFocus usa la cámara para evaluar tu postura frente a la pantalla.",
+        "NSMicrophoneUsageDescription": "ErgoFocus usa el micrófono para medir el nivel de ruido de tu entorno."
+      }
+    },
+    "android": {
+      "package": "com.ergofocus.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-audio",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "ErgoFocus usa la cámara para estimar tu postura localmente en el dispositivo.",
+          "recordAudioAndroid": false
+        }
+      ],
+      "expo-font",
+      "expo-asset",
+      "expo-sqlite"
+    ]
+  }
+}
